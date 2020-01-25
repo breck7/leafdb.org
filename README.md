@@ -1,37 +1,92 @@
-## Welcome to GitHub Pages
+## TreeBase
 
-You can use the [editor on GitHub](https://github.com/treenotation/treebase/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+TreeBase is a system for growing collaborative, limitless knowledge bases that get better with age.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### When TreeBase Helps
 
-### Markdown
+TreeBase helps you build knowledge bases about _anything_. It doesn't matter how simple or complex the domain.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+TreeBase is useful whether you are building a knowledge base by yourself or with thousands of people.
 
-```markdown
-Syntax highlighted code block
+### TreeBase Implementations
 
-# Header 1
-## Header 2
-### Header 3
+- [Javscript](https://github.com/treenotation/jtree/tree/master/treeBase)
 
-- Bulleted
-- List
+### How it Works
 
-1. Numbered
-2. List
+TreeBase stores data in plain text files using [Tree Notation](https://treenotation.org). Instead of storing data in rows in a compressed binary format, you store data in regular files.
 
-**Bold** and _Italic_ and `Code` text
+So a database of planets might look like this:
 
-[Link](url) and ![Image](src)
-```
+    planets/
+     venus.planet
+     mercury.planet
+     earth.planet
+     mars.planet
+     jupiter.planet
+     saturn.planet
+     neptune.planet
+     uranus.planet
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Each file contains information in a schema that you specify in a Grammar file.
 
-### Jekyll Themes
+For example, the file `mars.planet` might look like this:
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/treenotation/treebase/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+    diameter 6794
+    surfaceGravity 4
+    yearsToOrbitSun 1.881
+    moons 2
 
-### Support or Contact
+The Grammar file (TreeBase's version of "Schemas"), for this file would be this:
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    planetNode
+     root
+     todo Change pattern to postfix.
+     pattern \.planet$
+     inScope abstractIntPropertyNode abstractFloatPropertyNode
+     catchAllNodeType errorNode
+    anyFirstCell
+     todo remove the need for this
+    errorNode
+     baseNodeType errorNode
+    intCell
+     highlightScope constant.numeric.integer
+    floatCell
+     highlightScope constant.numeric.float
+    keywordCell
+     highlightScope keyword
+    abstractIntPropertyNode
+     cells intCell
+     firstCellType keywordCell
+     abstract
+    abstractFloatPropertyNode
+     cells floatCell
+     firstCellType keywordCell
+     abstract
+    surfaceGravityNode
+     extends abstractIntPropertyNode
+    diameterNode
+     extends abstractIntPropertyNode
+    moonsNode
+     extends abstractIntPropertyNode
+    yearsToOrbitSunNode
+     extends abstractFloatPropertyNode
+
+## Do I need to use a library to use TreeBase?
+
+No. You can use the TreeBase system without installing any new software on your computer. In fact, you don't even need to use a computer at all. Pen, paper, and some folders work well for small TreeBases.
+
+## Can I use TreeBase with my existing SQL databases?
+
+Yes. With one command you can turn any TreeBase database into a SQL database. There is no lock-in.
+
+## Can I use TreeBase with my existing JSON or CSV workflows?
+
+Yes. With one command you can convert any TreeBase into JSON, CSV, TSV, etc. There is no lock-in.
+
+## Does TreeBase scale?
+
+For collaborative knowledge bases, yes. We have been using TreeBase for over 2 years in systems with millions of rows and dozens of collaborators.
+
+Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for data. You are free to experiment with using TreeBase in other domains, and if you do please let us know how you are using it, but at the moment our focus is on knowledge bases.
+
