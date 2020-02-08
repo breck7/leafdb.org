@@ -77,6 +77,8 @@ The Grammar file (TreeBase's version of "Schemas"), for this file would be this:
     yearsToOrbitSunNode
      extends abstractFloatPropertyNode
 
+TreeBase delegates to Git for versioning, backups, and collaboration.
+
 ## Do I need to use a library to use TreeBase?
 
 No. You can use the TreeBase system without installing any new software on your computer. In fact, you don't even need to use a computer at all. Pen, paper, and some folders work well for small TreeBases.
@@ -96,3 +98,13 @@ For collaborative knowledge bases, yes. We have been using TreeBase for over 2 y
 At the moment TreeBase works best for knowledge bases of less than 100,000 entities/files (each file can have many facts). For larger TreeBases you are likely to hit some scaling challenges. Read more on that [here](https://breckyunits.com/building-a-treebase-with-6-point-5-million-files.html).
 
 Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for data. You are free to experiment with using TreeBase in other domains, and if you do please let us know how you are using it, but at the moment our focus is on knowledge bases.
+
+## How is this different than Wikipedia?
+
+You can think of TreeBase as similar to the [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) system that powers Wikipedia. The difference is whereas Wikipedia is focused on narratives first and semantic facts second, TreeBase is focused on semantics first and narratives second.
+
+## Similar Projects
+
+- [Outline](https://github.com/outline/outline)
+- [Forest 1.0](https://www.cs.princeton.edu/research/techreps/TR-904-11)
+- [Semantic Wikis](https://en.wikipedia.org/wiki/Semantic_wiki)
