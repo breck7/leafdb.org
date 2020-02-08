@@ -10,7 +10,12 @@ TreeBase is useful whether you are building a knowledge base by yourself or with
 
 ### TreeBase Implementations
 
-- [Javscript](https://github.com/treenotation/jtree/tree/master/treeBase)
+- [TypeScript/Javascript](https://github.com/treenotation/jtree/tree/master/treeBase)
+
+### Demo TreeBases
+
+- [The Solar System - 8 files](https://github.com/treenotation/jtree/tree/master/treeBase/planets)
+- [IMDB Subset - 6,000 files](https://github.com/breck7/6k)
 
 ### How it Works
 
@@ -86,7 +91,8 @@ Yes. With one command you can convert any TreeBase into JSON, CSV, TSV, etc. The
 
 ## Does TreeBase scale?
 
-For collaborative knowledge bases, yes. We have been using TreeBase for over 2 years in systems with millions of rows and dozens of collaborators.
+For collaborative knowledge bases, yes. We have been using TreeBase for over 2 years in systems with millions of lines and dozens of collaborators.
+
+At the moment TreeBase works best for knowledge bases of less than 100,000 entities/files (each file can have many facts). For larger TreeBases you are likely to hit some scaling challenges. Read more on that [here](https://breckyunits.com/building-a-treebase-with-6-point-5-million-files.html).
 
 Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for data. You are free to experiment with using TreeBase in other domains, and if you do please let us know how you are using it, but at the moment our focus is on knowledge bases.
-
