@@ -105,6 +105,8 @@ You can think of TreeBase as similar to the [MediaWiki](https://www.mediawiki.or
 
 ## Alternatives Considered and Relevant Links
 
+- [GitContentAddressableStorage](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
+- [CAS](https://en.wikipedia.org/wiki/Content-addressable_storage)
 - [Outline](https://github.com/outline/outline)
 - [Forest 1.0](https://www.cs.princeton.edu/research/techreps/TR-904-11)
 - [Semantic Wikis](https://en.wikipedia.org/wiki/Semantic_wiki)
