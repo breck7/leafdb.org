@@ -103,8 +103,18 @@ Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for 
 
 You can think of TreeBase as similar to the [MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) system that powers Wikipedia. The difference is whereas Wikipedia is focused on narratives first and semantic facts second, TreeBase is focused on semantics first and narratives second.
 
-## Similar Projects
+## Alternatives Considered and Relevant Links
 
 - [Outline](https://github.com/outline/outline)
 - [Forest 1.0](https://www.cs.princeton.edu/research/techreps/TR-904-11)
 - [Semantic Wikis](https://en.wikipedia.org/wiki/Semantic_wiki)
+- [Athens Research](https://github.com/athensresearch)
+- [Dendron](https://dendron.so/)
+- [org-roam](https://www.orgroam.com/)
+- [jelly](https://jellypbc.com/)
+- [tiddlyroam](https://tiddlyroam.org/)
+- [foam](https://foambubble.github.io/foam/)
+- [Remnote](https://www.remnote.io/)
+- [Obsidian](https://obsidian.md/)
+- [logseq](https://logseq.com/)
+
