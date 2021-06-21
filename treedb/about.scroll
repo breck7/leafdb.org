@@ -1,0 +1,14 @@
+title About TreeDB
+
+paragraph
+ This is a public domain database about trees. The goal of this site is to provide a big clean dataset for people to learn about trees.
+
+section Origin
+
+paragraph
+ I started this site while reading The Overstory, when I realized I did not know much about trees (the living things, not the data structures). At the time I was reading that, I needed a new subject to use to dogfood a new type of software called TreeBase. So combining the two needs into this one project seems like a fun thing to try!
+
+section Contributing
+
+paragraph
+ This project will be a lot more fun with more people. If you are interested in trees (the livings things OR the data structures), drop me a note or just start sending pull requests/creating issues!
