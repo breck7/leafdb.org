@@ -2,7 +2,7 @@ title TreeBase
 permalink index
 
 paragraph
- TreeBase is a system for growing collaborative, limitless knowledge bases that get better with age.
+ TreeBase is a design pattern for growing collaborative, limitless knowledge bases that get better with age.
 
 paragraph
  In TreeBase you create one file per concept and fill that file with richly structured plain text data. TreeBase uses Tree Notation syntax, so there is no noise introduced by the syntax, and you can store any and all kinds of data structures, and every word is strongly typed. TreeBase uses Git for version control so collaboration, auditing, and decentralization come built in.
@@ -27,7 +27,7 @@ paragraph
 question How does it work?
 
 paragraph
- TreeBase stores data in plain text files using TreeNotation🔗treenotation.org. Instead of storing data in rows in a compressed binary format, you store data in regular files. So a database of planets might look like this:
+ In a TreeBase you store data in plain text files using TreeNotation🔗treenotation.org. Instead of storing data in rows in a compressed binary format, you store data in regular files. So a database of planets might look like this:
 
 code
  📁planets
