@@ -1,0 +1,165 @@
+comment CSS reset
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,ol,ul,table
+ margin 0
+ padding 0
+ border 0
+ vertical-align baseline
+ border-spacing 0
+
+html
+ background-color rgb(244,244,244)
+ font-family Exchange,Georgia,serif
+ color #000
+ font-size 14px
+ hyphens auto
+
+.scrollChat
+ span
+  font-family Verdana
+  margin-top 5px
+  padding 5px 20px
+  border-radius 15px
+  display inline-block
+.scrollChat0
+ text-align left
+ span
+  background rgba(204,204,204, .5)
+.scrollChat1
+ text-align right
+ span
+  color white
+  background rgb(0,132,255)
+
+.scrollTitle
+ a
+  text-decoration none
+  color #000
+
+.scrollSocialMediaIcons
+ svg
+  width 30px
+  fill rgba(204,204,204, .5)
+  margin-left 15px
+  &:hover
+   fill #333
+
+.scrollCommunityLink
+ display block
+ font-family Verdana
+ font-weight 100
+ margin .5em
+ padding-bottom 1em
+ text-decoration none
+ color rgba(204,204,204, .5)
+
+.scrollTopRightBar
+ text-align right
+ position absolute
+ right 25px
+ top 3px
+
+.scrollFooter
+ border-top 1px solid rgb(204,204,204)
+ margin-top 8px
+ padding-top 8px
+ text-align center
+
+.scrollHeader
+ border-bottom 1px solid rgb(204,204,204)
+ text-align center
+ padding-bottom 8px
+
+.scrollArticleCell
+ border-bottom 1px solid rgb(204,204,204)
+ padding 1ch 0
+ break-inside avoid
+ text-align justify
+ margin-bottom .5em
+
+.scrollImage
+ display block
+ text-align center
+ img
+  max-width 35ch
+  height auto
+
+.scrollPage
+ column-count auto
+ column-fill balance
+ column-width 35ch
+ column-gap 20px
+ column-rule 1px solid rgb(204,204,204)
+ padding-left 20px
+ padding-right 20px
+ margin auto
+ table
+  table-layout fixed
+  margin .5em 0
+  overflow hidden
+  font-size 80%
+  width 100%
+  hyphens none
+  border 1px solid rgba(224,224,224,.8)
+  td,th
+   padding 3px
+   overflow hidden
+  th
+   border-bottom 2px solid rgba(0,0,0,.6)
+   text-align left
+  tr:nth-child(even)
+   background rgba(224,224,224,.6)
+ ul,ol
+  text-align left
+  line-height 1.4em
+  padding-left 1em
+  margin-top 0.4em
+ p
+  text-indent 1em
+  margin-top 0.4em
+  line-height 1.4em
+ p:first-of-type
+  display inline
+ .scrollCodeBlock,blockquote
+  break-inside avoid
+ .scrollCodeBlock,blockquote
+  display block
+  margin .5em 0
+  padding .5em
+  background rgba(204,204,204,.5)
+ .scrollCodeBlock
+  overflow auto
+  font-size 80%
+  hyphens none
+ .scrollCodeBlock
+  white-space pre
+  border-left .5em solid rgba(204,204,204, .8)
+ blockquote
+  white-space pre-line
+  border-left .5em solid rgba(204,204,204, .8)
+ h1
+  font-size 24px
+  a
+   text-decoration none
+   color #000
+  margin-bottom .25em
+ h1,h2,h3,h4,h5,h6
+  text-align center
+ h2,h3,h4
+  margin .2em
+
+.scrollArticleDate
+ font-style italic
+ font-size 80%
+ display inline
+
+.scrollArticleSourceLink
+ text-align center
+ font-size 80%
+ margin 0
+ a
+  color #000
+  text-decoration none
+
+.scrollSingleArticle
+ column-rule none
+ padding-top 8px

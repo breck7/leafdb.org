@@ -1,0 +1,43 @@
+#! /usr/bin/env node /usr/local/bin/jtree
+test grammarSample
+ arrange
+  require ../index.js jtree.HandGrammarProgram
+  constructWithParagraph
+   testlangNode
+    root
+    compilesTo txt
+    inScope baseNode
+   anyCell
+   wordCell
+    extends anyCell
+   baseNode
+    crux base
+   keywordCell
+   blockNode
+    crux block
+    extends baseNode
+    inScope baseNode
+   toNode
+    crux to
+    extends blockNode
+    cells keywordCell wordCell
+    tags test
+    compiler
+     stringTemplate to {wordCell}
+     closeChildren end
+ getRunTimeFirstWordsInScope
+  assertLengthIs 2
+ getNodeTypeDefinitionByNodeTypeId toNode
+  assertTypeIs object
+ getTopNodeTypeDefinitions
+  assertLengthIs 3
+ getExtensionName
+  assertStringIs testlang
+ toSublimeSyntaxFile
+  assertTypeIs string
+ isDefined notDefined
+  assertStringIs false
+ isDefined toNode
+  assertStringIs true
+ getAllErrors
+  assertLengthIs 0

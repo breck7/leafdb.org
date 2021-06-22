@@ -1,0 +1,12 @@
+tooling onsave jtree build buildJibJab
+jibjabNode
+ root
+ description Adds a comment node to Jibberish
+ extends jibberishNode
+commentCell
+ highlightScope comment
+commentNode
+ extends topLevelNode
+ catchAllCellType commentCell
+ catchAllNodeType commentNode
+ crux comment

@@ -1,0 +1,15 @@
+anyCell
+valueCell
+ highlightScope string
+ description Any character is valid in a value.
+keywordCell
+ description Allows any character except a space.
+ highlightScope keyword
+configNode
+ description A simple Tree Language for config files. Stores recursive maps with keys as strings and values as strings.
+ root
+ catchAllNodeType pairNode
+pairNode
+ description Holds a key/value pair
+ catchAllCellType valueCell
+ cells keywordCell

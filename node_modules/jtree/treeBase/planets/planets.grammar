@@ -1,0 +1,36 @@
+anyCell
+filenameCell
+intCell
+ highlightScope constant.numeric.integer
+floatCell
+ highlightScope constant.numeric.float
+keywordCell
+ highlightScope keyword
+planetNode
+ root
+ string tableName planets
+ todo Change pattern to postfix.
+ pattern \.planet$
+ cells filenameCell
+ inScope abstractIntPropertyNode abstractFloatPropertyNode
+ catchAllNodeType errorNode
+errorNode
+ baseNodeType errorNode
+abstractIntPropertyNode
+ cells keywordCell intCell
+ abstract
+surfaceGravityNode
+ extends abstractIntPropertyNode
+ crux surfaceGravity
+diameterNode
+ extends abstractIntPropertyNode
+ crux diameter
+moonsNode
+ extends abstractIntPropertyNode
+ crux moons
+abstractFloatPropertyNode
+ cells keywordCell floatCell
+ abstract
+yearsToOrbitSunNode
+ extends abstractFloatPropertyNode
+ crux yearsToOrbitSun

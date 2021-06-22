@@ -1,0 +1,119 @@
+keywordCell
+anyCell
+fieldIdCell
+ examples titleField
+ highlightScope keyword
+enumOptionCell
+ extends anyCell
+ highlightScope string
+typeIdCell
+ highlightScope variable
+ examples intType
+enumTypeIdCell
+ extends typeIdCell
+ examples reductionEnumType
+unionTypeIdCell
+ examples timeUnitUnionType
+ extends typeIdCell
+mapTypeIdCell
+ examples countMapType
+ extends typeIdCell
+typeDecIdCell
+ examples intType
+ extends typeIdCell
+stringKeyCell
+ highlightScope string
+interfaceIdCell
+ highlightScope variable
+ examples storeInterface
+commentKeywordCell
+ extends keywordCell
+ highlightScope comment
+commentCell
+ extends anyCell
+ highlightScope comment
+wwtNode
+ description WorldWideTypes. A work in progress. A simple Tree Language for only declaring types and interfaces that compiles to TypeScript, and in the future other langs.
+ root
+ inScope abstractTypeDeclarationNode interfaceDeclarationNode
+ catchAllNodeType errorNode
+ compilesTo ts
+ javascript
+  compile() {
+   return `namespace {\n ` + super.compile().replace(/\n\s*\n+/g, "\n") + "\n}"
+  }
+commentNode
+ baseNodeType blobNode
+ cells commentKeywordCell
+ catchAllCellType commentCell
+ compiler
+  stringTemplate /* {commentCell} */
+ crux comment
+errorNode
+ baseNodeType errorNode
+abstractTypeDeclarationNode
+ abstract
+ inScope commentNode
+enumTypeDeclarationNode
+ extends abstractTypeDeclarationNode
+ cells enumTypeIdCell
+ inScope enumOptionsNode
+ pattern EnumType$
+unionTypeDeclarationNode
+ cells unionTypeIdCell
+ extends abstractTypeDeclarationNode
+ pattern UnionType$
+ inScope unionTypesNode
+mapTypeDeclarationNode
+ cells mapTypeIdCell
+ extends abstractTypeDeclarationNode
+ pattern MapType$
+ inScope keyNode valueNode
+typeDeclarationNode
+ cells typeDecIdCell
+ extends abstractTypeDeclarationNode
+ pattern Type$
+ inScope extendsNode
+ compiler
+  stringTemplate export declare type {typeDecIdCell} = {extends}
+extendsNode
+ cells keywordCell typeIdCell
+ required
+ compiler
+  stringTemplate 
+ crux extends
+enumOptionsNode
+ cells keywordCell
+ catchAllCellType enumOptionCell
+ crux enumOptions
+unionTypesNode
+ cells keywordCell
+ catchAllCellType typeIdCell
+ crux unionTypes
+keyNode
+ cells keywordCell stringKeyCell typeIdCell
+ crux key
+valueNode
+ cells keywordCell typeIdCell
+ crux value
+interfaceDeclarationNode
+ pattern Interface$
+ cells interfaceIdCell
+ inScope commentNode fieldDeclarationNode
+ compiler
+  stringTemplate export interface {interfaceIdCell} {
+  closeChildren }
+fieldDeclarationNode
+ pattern Field
+ cells fieldIdCell typeIdCell
+ inScope optionalNode arrayNode
+ compiler
+  stringTemplate {fieldIdCell}: {typeIdCell}
+optionalNode
+ description Is this field optional?
+ cells keywordCell
+ crux optional
+arrayNode
+ description Does this take an array
+ cells keywordCell
+ crux array

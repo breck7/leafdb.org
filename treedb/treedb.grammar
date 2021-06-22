@@ -1,0 +1,8 @@
+wikipediaNode
+ description A link to the wikipedia page about a tree species.
+ extends abstractScrollNode
+ pattern ^https\:\/\/en\.wikipedia\.org\/wiki\/
+ javascript
+  compile() {
+    return `<p>Read more on <a href="${this.getLine()}">Wikipedia</a></p>`
+  }
