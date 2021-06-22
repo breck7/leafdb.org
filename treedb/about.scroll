@@ -6,7 +6,7 @@ paragraph
 section Origin
 
 paragraph
- I started this site while reading The Overstory, when I realized I did not know much about trees (the living things, not the data structures). At the time I was reading that, I needed a new subject to use to dogfood a new type of software called TreeBase. So combining the two needs into this one project seems like a fun thing to try!
+ This site is built to test out some ideas around <a href="https://treebase.treenotation.org/">TreeBase</a>. I needed a topic to make a new database about and decided on trees, inspired by the book The Overstory.
 
 section Contributing
 
