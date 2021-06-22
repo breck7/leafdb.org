@@ -4,26 +4,27 @@ permalink index
 paragraph
  TreeBase is a system for growing collaborative, limitless knowledge bases that get better with age.
 
-title3 When TreeBase Helps
-
 paragraph
- TreeBase helps you build knowledge bases about <i>anything</i>. It doesn't matter how simple or complex the domain.
+ In TreeBase you create one file per concept and fill that file with richly structured plain text data. TreeBase uses Tree Notation syntax, so there is no noise introduced by the syntax, and you can store any and all kinds of data structures, and every word is strongly typed. TreeBase uses Git for version control so collaboration, auditing, and decentralization come built in.
 
-paragraph
- TreeBase is useful whether you are building a knowledge base by yourself or with thousands of people.
-
-title3 TreeBase Implementations
+question Are there some demo TreeBases?
 
 list
- - TypeScript/Javascript🔗github.com/treenotation/jtree/tree/master/treeBase
-
-title3 Demo TreeBases
-
-list
+ - TreeDB🔗./treeDb/index.html - 16 files
  - TheSolarSystem🔗github.com/treenotation/jtree/tree/master/treeBase/planets - 8 files
  - IMDBSubset🔗github.com/breck7/6k - 6,000 files
 
-title3 How it Works
+question When should I use TreeBase?
+
+paragraph
+ TreeBase helps you build knowledge bases about <i>anything</i>. It doesn't matter how simple or complex the domain. TreeBase is useful whether you are building a knowledge base by yourself or with thousands of people.
+
+question What are some TreeBase Implementations?
+
+paragraph
+ TreeBase is more of a design pattern than a software application. However, the JTree🔗github.com/treenotation/jtree/tree/master/treeBase TreeNotation SDK contains a lot of tools useful for working with TreeBases.
+
+question How does it work?
 
 paragraph
  TreeBase stores data in plain text files using TreeNotation🔗treenotation.org. Instead of storing data in rows in a compressed binary format, you store data in regular files. So a database of planets might look like this:
@@ -88,22 +89,27 @@ code
 paragraph
  TreeBase delegates to Git for versioning, backups, and collaboration.
 
-title3 Do I need to use a library to use TreeBase?
+question Do I need to use a library to use TreeBase?
 
 paragraph
  No. You can use the TreeBase system without installing any new software on your computer. In fact, you don't even need to use a computer at all. Pen, paper, and some folders work well for small TreeBases.
 
-title3 Can I use TreeBase with my existing SQL databases?
+question Can I use TreeBase with my existing SQL databases?
 
 paragraph
  Yes. With one command you can turn any TreeBase database into a SQL database. There is no lock-in.
 
-title3 Can I use TreeBase with my existing JSON or CSV workflows?
+question Can I use TreeBase with my existing JSON or CSV workflows?
 
 paragraph
  Yes. With one command you can convert any TreeBase into JSON, CSV, TSV, etc. There is no lock-in.
 
-title3 Does TreeBase scale?
+question Can I use TreeBase with a CMS?
+
+paragraph
+ Yes. TreeBase works great with Scroll🔗scroll.publicdomaincompany.com. In a TreeBase + Scroll pattern, each entity gets it's own page. Your grammar simply extends Scroll's grammar.
+
+question Does TreeBase scale?
 
 paragraph
  For collaborative knowledge bases, yes. We have been using TreeBase for over 2 years in systems with millions of lines and dozens of collaborators.
@@ -114,12 +120,12 @@ paragraph
 paragraph
  Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for data. You are free to experiment with using TreeBase in other domains, and if you do please let us know how you are using it, but at the moment our focus is on knowledge bases.
 
-title3 How is this different than Wikipedia?
+question How is this different than Wikipedia?
 
 paragraph
  You can think of TreeBase as similar to the MediaWiki🔗www.mediawiki.org/wiki/MediaWiki system that powers Wikipedia. The difference is whereas Wikipedia is focused on narratives first and semantic facts second, TreeBase is focused on semantics first and narratives second.
 
-title3 Alternatives Considered and Relevant Links
+section Alternatives Considered and Relevant Links
 
 list
  - GitContentAddressableStorage🔗git-scm.com/book/en/v2/Git-Internals-Git-Objects
@@ -137,4 +143,4 @@ list
  - Obsidian🔗obsidian.md
  - logseq🔗logseq.com
 
-title3 ❤️ Public Domain ❤️
+section ❤️ Public Domain ❤️
