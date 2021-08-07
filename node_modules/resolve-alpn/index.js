@@ -1,8 +1,10 @@
 'use strict';
 const tls = require('tls');
 
-module.exports = (options = {}) => new Promise((resolve, reject) => {
+module.exports = (options = {}, connect = tls.connect) => new Promise((resolve, reject) => {
 	let timeout = false;
+
+	let socket;
 
 	const callback = async () => {
 		socket.off('timeout', onTimeout);
@@ -26,8 +28,14 @@ module.exports = (options = {}) => new Promise((resolve, reject) => {
 		callback();
 	};
 
-	const socket = tls.connect(options, callback);
+	(async () => {
+		try {
+			socket = await connect(options, callback);
 
-	socket.on('error', reject);
-	socket.once('timeout', onTimeout);
+			socket.on('error', reject);
+			socket.once('timeout', onTimeout);
+		} catch (error) {
+			reject(error);
+		}
+	})();
 });
