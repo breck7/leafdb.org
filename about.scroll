@@ -1,0 +1,14 @@
+title About LeafDB
+
+* This is a public domain database about trees. The goal of this site is to provide a big clean dataset for people to learn about trees.
+
+# Origin
+
+*  This site is built to test out some ideas around TreeBase. I needed a topic to make a new database about and decided on trees, inspired by the book The Overstory.
+ https://github.com/breck7/jtree/tree/main/treeBase TreeBase
+
+# Contributing
+
+* This project will be a lot more fun with more people. If you are interested in trees (the livings things OR the data structures), drop me a note or just start sending pull requests/creating issues!
+
+import settings.scroll

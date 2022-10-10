@@ -1,6 +1,6 @@
 title Unanswered Questions About Trees
 
-skipIndexPage
+importOnly
 
 paragraph
  I have a lot of questions about trees. I'll write them here and then add articles with answers.
@@ -112,7 +112,7 @@ question What are people who study trees called?
 question How many species of animal live on one tree?
 
 
-
+import settings.scroll
 
 
 

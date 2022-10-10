@@ -15,8 +15,6 @@ jobs:
           npm install scroll-cli
           ./node_modules/scroll-cli/scroll.js build
           rm .gitignore
-          cd treedb
-          ../node_modules/scroll-cli/scroll.js build
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:

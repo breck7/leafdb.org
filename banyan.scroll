@@ -1,0 +1,10 @@
+title Banyan Tree
+
+image banyan.svg
+
+maxHeight 100ft
+
+https://en.wikipedia.org/wiki/Banyan
+
+groups index
+import settings.scroll
