@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import tap from './tap.js'
 
 export const {

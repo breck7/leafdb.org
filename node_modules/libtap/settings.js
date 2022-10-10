@@ -1,5 +1,7 @@
 'use strict'
 
+const process = require('./lib/process.js')
+
 const fs = require('fs')
 const path = require('path')
 const StackUtils = require('stack-utils')

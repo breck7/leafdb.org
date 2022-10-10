@@ -2,7 +2,7 @@ const {highlightFileSync} = require('cardinal')
 const theme = require('./cardinal-theme.js')
 const c = require('chalk')
 const { red, bold } = c
-const slen = require('string-length')
+const slen = require('./string-length.js')
 
 // lol
 const lp = (s,n) => `${

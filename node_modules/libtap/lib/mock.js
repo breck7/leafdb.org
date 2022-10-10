@@ -1,5 +1,6 @@
 const Module = require('module')
 const { isAbsolute } = require('path')
+const process = require('./process.js')
 
 const isPlainObject = obj => obj
   && typeof obj === 'object'

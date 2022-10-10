@@ -1,0 +1,10 @@
+title Mangrove Tree
+
+image mangrove.svg
+
+maxHeight 10ft
+
+https://en.wikipedia.org/wiki/Mangrove
+
+groups index
+import settings.scroll

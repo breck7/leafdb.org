@@ -1,4 +1,5 @@
 'use strict'
+const process = require('./process.js')
 const path = require('path')
 const fs = require('fs')
 const diff = require('diff')

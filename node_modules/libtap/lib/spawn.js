@@ -1,4 +1,5 @@
 'use strict'
+const process = require('../lib/process.js')
 const path = require('path')
 const cp = require('child_process')
 const ownOr = require('own-or')

@@ -2,8 +2,10 @@
 
 const fs = require('fs')
 const path = require('path')
-const cwd = process.cwd()
+
 // initialize once so it doesn't get borked if process.argv is changed later
+const process = require('./process.js')
+const cwd = process.cwd()
 const main = require('./find-main-script.js')('TAP')
 const settings = require('../settings.js')
 

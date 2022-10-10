@@ -1,6 +1,6 @@
 const React = require('react')
 const {render} = require('ink')
-const importJSX = require('import-jsx')
+const importJSX = require('@isaacs/import-jsx')
 /* istanbul ignore next */
 const reporter = {
   report (tap, Type = 'base') {

@@ -1,4 +1,6 @@
 'use strict'
+const process = require('./process.js')
+const fakeProcess = require('./fake-process.js')
 const Domain = require('async-hook-domain')
 const onExit = require('signal-exit')
 const Test = require('./test.js')
@@ -40,6 +42,12 @@ const monkeypatchEpipe = () => {
 }
 
 const monkeypatchExit = () => {
+  /* istanbul ignore next - impossible to cover, but we do have a test
+   * that verifies we don't try to call process.on if process is gone */
+  if (global.process !== process) {
+    return
+  }
+
   const exit = process.exit
   const reallyExit = process.reallyExit
 

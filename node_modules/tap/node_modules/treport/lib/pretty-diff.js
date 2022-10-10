@@ -1,4 +1,4 @@
-const slen = require('string-length')
+const slen = require('./string-length.js')
 const c = require('chalk')
 
 const green = s =>

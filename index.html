@@ -1,28 +1,28 @@
 <!doctype html>
 <!--
 
- This page was compiled by 📜 Scroll, the public domain
- static site publishing software.
+ This page was compiled by 📜 Scroll, a public domain
+ programming language and static site publishing tool.
  
  https://scroll.pub
  
  Generally you don't want to edit it by hand.
 
- Scroll v22.1.0
+ Scroll v35.1.0
 
 -->
 <html lang="en-US">
  <head>
   <meta charset="utf-8"></meta>
-  <title>TreeBase - TreeBase</title>
+  <title>🌳 LeafDB</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"></meta>
-  <meta name="description" content="The design pattern for intelligent & collaborative & long-term knowledge bases."></meta>
-  <meta name="generator" content="Scroll v22.1.0"></meta>
-  <meta property="og:title" content="TreeBase"></meta>
-  <meta property="og:description" content="TreeBase is a design pattern for growing collaborative, limitless knowledge bases that get better with age."></meta>
+  <meta name="description" content="A database about trees."></meta>
+  <meta name="generator" content="Scroll v35.1.0"></meta>
+  <meta property="og:title" content="🌳 LeafDB"></meta>
+  <meta property="og:description" content="A database about trees."></meta>
   <meta property="og:image" content=""></meta>
   <meta name="twitter:card" content="summary_large_image"></meta>
-  <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table {
+  <style>html,body,div,span,h1,h2,h3,h4,p,ol,ul,table,figure {
   margin: 0;
   padding: 0;
   border: 0;
@@ -74,7 +74,7 @@ html {
   text-decoration: none;
   color: rgba(204,204,204,.5);
 }
-.scrollIndexPageComponent,.scrollArticlePageComponent {
+.scrollGroupPageComponent,.scrollFilePageComponent {
   column-count: auto;
   column-fill: balance;
   column-width: 35ch;
@@ -84,11 +84,23 @@ html {
   padding-right: 20px;
   margin: auto;
 }
-.scrollArticlePageComponent {
+.scrollFilePageComponent {
   column-rule: none;
   padding-top: 8px;
 }
-.scrollIndexPageArticleContainerComponent {
+.scrollFilePageComponent .scrollTitleComponent {
+  display: none;
+}
+.scrollFilePageTitle {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.scrollFilePageTitle a {
+  text-decoration: none;
+  color: #000;
+}
+.scrollGroupPageFileContainerComponent {
   border-bottom: 1px solid rgb(204,204,204);
   padding: 1ch 0;
   break-inside: avoid;
@@ -104,12 +116,11 @@ html {
   text-decoration: none;
   color: #000;
 }
-.scrollArticleDateComponent {
+.scrollDateComponent {
   font-style: italic;
   font-size: 80%;
 }
 .scrollParagraphComponent {
-  text-indent: 1em;
   margin-top: 0.4em;
   line-height: 1.4em;
 }
@@ -122,9 +133,19 @@ html {
   white-space: pre-line;
   border-left: .5em solid rgba(204,204,204,.8);
 }
-.scrollQuestionComponent,.scrollSectionComponent,.scrollSubsectionComponent {
+.scrollSectionComponent,.scrollSubsectionComponent {
   text-align: center;
-  margin: .2em;
+  margin-top: 1em;
+}
+.scrollQuestionComponent {
+  text-align: left;
+  margin-top: 2em;
+}
+code {
+  font-size: 90%;
+  background-color: rgba(204,204,204,.5);
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 .scrollCodeBlockComponent {
   overflow: auto;
@@ -136,7 +157,7 @@ html {
   display: block;
   margin: .5em 0;
   padding: .5em;
-  background: rgba(204,204,204,.5);
+  border-radius: 0;
 }
 .scrollTableComponent {
   table-layout: fixed;
@@ -158,22 +179,49 @@ html {
 .scrollTableComponent tr:nth-child(even) {
   background: rgba(224,224,224,.6);
 }
+.scrollAuthor {
+  font-size: 12px;
+  font-style: italic;
+  margin: 4px 0;
+  text-align: center;
+}
+.scrollKpiTable {
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  break-inside: avoid;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.scrollKpiTable td {
+  width: 33.3%;
+  border: 1px solid #e8e8e8;
+}
+.scrollKpiTable span {
+  font-size: 20p;;
+  display: block;
+}
 .scrollUnorderedListComponent,.scrollOrderedListComponent {
   text-align: left;
   line-height: 1.4em;
   padding-left: 1em;
   margin-top: 0.4em;
 }
-.scrollArticleSourceLinkComponent {
+.scrollFileViewSourceUrlComponent {
   text-align: center;
   font-size: 80%;
   margin: 0;
   margin-top: 0.4em;
   line-height: 1.4em;
 }
-.scrollArticleSourceLinkComponent a {
+.scrollFileViewSourceUrlComponent a {
   color: #000;
   text-decoration: none;
+}
+.scrollContinueReadingLink {
+  display: block;
+  text-align: center;
 }
 .scrollDialogueComponent span {
   font-family: Verdana;
@@ -200,8 +248,18 @@ html {
   text-align: center;
 }
 .scrollImageComponent img {
-  max-width: 35ch;
+  max-width: 98%;
   height: auto;
+}
+.scrollImageComponent figcaption {
+  font-style: italic;
+}
+.scrollKeyboardNav {
+  display: none;
+}
+.scrollCaveat {
+  text-decoration: underline dashed 1px rgba(0,0,0,.1);
+  cursor: default;
 }
 </style>
 </head>
@@ -209,151 +267,329 @@ html {
   <div class="scrollHeaderComponent">
    <div class="scrollTopRightBarComponent">
     <div class="scrollSocialMediaIconsComponent">
-     <a href="https://github.com/treenotation/treebase"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+     <a href="https://github.com/breck7/leafdb"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
 </div>
    <h2 class="scrollNameComponent">
-    <a href="index.html">TreeBase</a>
+    <a href="index.html">🌳 LeafDB</a>
 </h2>
-   <div>The design pattern for intelligent & collaborative & long-term knowledge bases.</div>
+   <div>A database about trees.</div>
 </div>
-  <div class="scrollArticlePageComponent" style=""><h1 class="scrollTitleComponent"><a href="index.html">TreeBase</a></h1>
+  <div class="scrollGroupPageComponent" style="column-width:35ch;">
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="tropical-almond.html">Tropical Almond Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="tropical-almond.svg" target="_blank"><img src="tropical-almond.svg" width="257" height="227" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 115ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Terminalia_catappa</p>
 
 
-<p class="scrollParagraphComponent">TreeBase is a design pattern for growing collaborative, limitless knowledge bases that get better with age.</p>
 
-<p class="scrollParagraphComponent">In TreeBase you create one file per concept and fill that file with richly structured plain text data. TreeBase uses Tree Notation syntax, so there is no noise introduced by the syntax, and you can store any and all kinds of data structures, and every word is strongly typed. TreeBase uses Git for version control so collaboration, auditing, and decentralization come built in.</p>
 
-<h4 class="scrollQuestionComponent">Are there some demo TreeBases?</h4>
 
-<ul class="scrollUnorderedListComponent">
-<li><a href="treedb/index.html">TreeDB</a> - 16 files</li>
-<li><a href="https://github.com/treenotation/jtree/tree/master/treeBase/planets">TheSolarSystem</a> - 8 files</li>
-<li><a href="https://github.com/breck7/6k">IMDBSubset</a> - 6,000 files</li>
-</ul>
 
-<h4 class="scrollQuestionComponent">When should I use TreeBase?</h4>
 
-<p class="scrollParagraphComponent">TreeBase helps you build knowledge bases about <i>anything</i>. It doesn't matter how simple or complex the domain. TreeBase is useful whether you are building a knowledge base by yourself or with thousands of people.</p>
 
-<h4 class="scrollQuestionComponent">What are some TreeBase Implementations?</h4>
 
-<p class="scrollParagraphComponent">TreeBase is more of a design pattern than a software application. However, the <a href="https://github.com/treenotation/jtree/tree/master/treeBase">JTree</a> TreeNotation SDK contains a lot of tools useful for working with TreeBases.</p>
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/tropical-almond.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="sausage.html">Sausage Tree</a></h1>
 
-<h4 class="scrollQuestionComponent">How does it work?</h4>
+<figure class="scrollImageComponent"><a href="sausage.svg" target="_blank"><img src="sausage.svg" width="587" height="380" loading="lazy"/></a></figure>
 
-<p class="scrollParagraphComponent">In a TreeBase you store data in plain text files using <a href="https://treenotation.org">TreeNotation</a>. Instead of storing data in rows in a compressed binary format, you store data in regular files. So a database of planets might look like this:</p>
+<p class="scrollParagraphComponent">maxHeight 66ft</p>
 
-<code class="scrollCodeBlockComponent">📁planets
- venus.planet
- mercury.planet
- earth.planet
- mars.planet
- jupiter.planet
- saturn.planet
- neptune.planet
- uranus.planet</code>
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Kigelia</p>
 
-<p class="scrollParagraphComponent">Each file contains information in a schema that you specify in a Grammar file. For example, the file `mars.planet` might look like this:</p>
 
-<code class="scrollCodeBlockComponent">diameter 6794
-surfaceGravity 4
-yearsToOrbitSun 1.881
-moons 2</code>
 
-<p class="scrollParagraphComponent">The Grammar file (TreeBase's version of "Schemas"), for this file would be this:</p>
 
-<code class="scrollCodeBlockComponent">planetNode
- root
- todo Change pattern to postfix.
- pattern \.planet$
- inScope abstractIntPropertyNode abstractFloatPropertyNode
- catchAllNodeType errorNode
-anyFirstCell
- todo remove the need for this
-errorNode
- baseNodeType errorNode
-intCell
- highlightScope constant.numeric.integer
-floatCell
- highlightScope constant.numeric.float
-keywordCell
- highlightScope keyword
-abstractIntPropertyNode
- cells intCell
- firstCellType keywordCell
- abstract
-abstractFloatPropertyNode
- cells floatCell
- firstCellType keywordCell
- abstract
-surfaceGravityNode
- extends abstractIntPropertyNode
-diameterNode
- extends abstractIntPropertyNode
-moonsNode
- extends abstractIntPropertyNode
-yearsToOrbitSunNode
- extends abstractFloatPropertyNode</code>
 
-<p class="scrollParagraphComponent">TreeBase delegates to Git for versioning, backups, and collaboration.</p>
 
-<h4 class="scrollQuestionComponent">Do I need to use a library to use TreeBase?</h4>
 
-<p class="scrollParagraphComponent">No. You can use the TreeBase system without installing any new software on your computer. In fact, you don't even need to use a computer at all. Pen, paper, and some folders work well for small TreeBases.</p>
 
-<h4 class="scrollQuestionComponent">Can I use TreeBase with my existing SQL databases?</h4>
 
-<p class="scrollParagraphComponent">Yes. With one command you can turn any TreeBase database into a SQL database. There is no lock-in.</p>
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/sausage.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="poinciana.html">Poinciana Tree</a></h1>
 
-<h4 class="scrollQuestionComponent">Can I use TreeBase with my existing JSON or CSV workflows?</h4>
+<figure class="scrollImageComponent"><a href="poinciana.svg" target="_blank"><img src="poinciana.svg" width="587" height="320" loading="lazy"/></a></figure>
 
-<p class="scrollParagraphComponent">Yes. With one command you can convert any TreeBase into JSON, CSV, TSV, etc. There is no lock-in.</p>
+<p class="scrollParagraphComponent">maxHeight 40ft</p>
 
-<h4 class="scrollQuestionComponent">Can I use TreeBase with a CMS?</h4>
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Delonix_regia</p>
 
-<p class="scrollParagraphComponent">Yes. TreeBase works great with <a href="https://scroll.publicdomaincompany.com">Scroll</a>. In a TreeBase + Scroll pattern, each entity gets it's own page. Your grammar simply extends Scroll's grammar.</p>
 
-<h4 class="scrollQuestionComponent">Does TreeBase scale?</h4>
 
-<p class="scrollParagraphComponent">For collaborative knowledge bases, yes. We have been using TreeBase for over 2 years in systems with millions of lines and dozens of collaborators.</p>
 
-<p class="scrollParagraphComponent">At the moment TreeBase works best for knowledge bases of less than 100,000 entities/files (each file can have many facts). For larger TreeBases you are likely to hit some scaling challenges. Read more on that <a href="https://breckyunits.com/building-a-treebase-with-6-point-5-million-files.html">here</a>.</p>
 
-<p class="scrollParagraphComponent">Our focus with TreeBase is on collaborative knowledge bases, like Wikipedia for data. You are free to experiment with using TreeBase in other domains, and if you do please let us know how you are using it, but at the moment our focus is on knowledge bases.</p>
 
-<h4 class="scrollQuestionComponent">How is this different than Wikipedia?</h4>
 
-<p class="scrollParagraphComponent">You can think of TreeBase as similar to the <a href="https://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a> system that powers Wikipedia. The difference is whereas Wikipedia is focused on narratives first and semantic facts second, TreeBase is focused on semantics first and narratives second.</p>
 
-<h3 class="scrollSectionComponent">Alternatives Considered and Relevant Links</h3>
 
-<ul class="scrollUnorderedListComponent">
-<li><a href="https://git-scm.com/book/en/v2/Git-Internals-Git-Objects">GitContentAddressableStorage</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Content-addressable_storage">CAS</a></li>
-<li><a href="https://github.com/outline/outline">Outline</a></li>
-<li><a href="https://www.cs.princeton.edu/research/techreps/TR-904-11">Forest1.0</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Semantic_wiki">SemanticWikis</a></li>
-<li><a href="https://github.com/athensresearch">AthensResearch</a></li>
-<li><a href="https://dendron.so">Dendron</a></li>
-<li><a href="https://www.orgroam.com">org-roam</a></li>
-<li><a href="https://jellypbc.com">jelly</a></li>
-<li><a href="https://tiddlyroam.org">tiddlyroam</a></li>
-<li><a href="https://foambubble.github.io/foam/">foam</a></li>
-<li><a href="https://www.remnote.io">Remnote</a></li>
-<li><a href="https://obsidian.md">Obsidian</a></li>
-<li><a href="https://logseq.com">logseq</a></li>
-</ul>
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/poinciana.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="papaya.html">Papaya Tree</a></h1>
 
-<h3 class="scrollSectionComponent">❤️ Public Domain ❤️</h3>
-<p class="scrollArticleSourceLinkComponent"><a href="https://github.com/treenotation/treebase/blob/main/readme.scroll">Article source</a></p></div>
+<figure class="scrollImageComponent"><a href="papaya.svg" target="_blank"><img src="papaya.svg" width="191" height="264" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 33ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Papaya</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/papaya.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="noni.html">Noni Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="noni.svg" target="_blank"><img src="noni.svg" width="587" height="654" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 30ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Morinda_citrifolia</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/noni.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="monkeypod.html">Monkeypod Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="monkeypod.svg" target="_blank"><img src="monkeypod.svg" width="177" height="109" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 82ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Samanea_saman</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/monkeypod.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="mangrove.html">Mangrove Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="mangrove.svg" target="_blank"><img src="mangrove.svg" width="306" height="304" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 10ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Mangrove</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/mangrove.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="macadamia.html">Macadamia Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="macadamia.svg" target="_blank"><img src="macadamia.svg" width="246" height="345" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 40ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Macadamia</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/macadamia.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="lychee.html">Lychee Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="lychee.svg" target="_blank"><img src="lychee.svg" width="443" height="495" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 92ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Lychee</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/lychee.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="koa.html">Koa Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="koa.svg" target="_blank"><img src="koa.svg" width="587" height="782" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 98ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Acacia_koa</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/koa.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="jacaranda.html">Jacaranda Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="jacaranda.svg" target="_blank"><img src="jacaranda.svg" width="587" height="374" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 66ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Jacaranda_mimosifolia</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/jacaranda.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="hala.html">Hala Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="hala.svg" target="_blank"><img src="hala.svg" width="410" height="497" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 46ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Pandanus_tectorius</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/hala.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="golden-shower.html">Golden Shower Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="golden-shower.svg" target="_blank"><img src="golden-shower.svg" width="587" height="529" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 66ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Cassia_fistula</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/golden-shower.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="eucalyptus.html">Eucalyptus Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="eucalyptus.svg" target="_blank"><img src="eucalyptus.svg" width="587" height="717" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 200ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Eucalyptus</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/eucalyptus.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="coconut.html">Coconut Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="coconut.svg" target="_blank"><img src="coconut.svg" width="466" height="861" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 100ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Coconut</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/coconut.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="breadfruit.html">Breadfruit Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="breadfruit.svg" target="_blank"><img src="breadfruit.svg" width="587" height="663" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 85ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Breadfruit</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/breadfruit.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="banyan.html">Banyan Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="banyan.svg" target="_blank"><img src="banyan.svg" width="587" height="419" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 100ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Banyan</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/banyan.scroll">View source</a></p></div>
+   <div class="scrollGroupPageFileContainerComponent"><h1 class="scrollTitleComponent"><a href="banana.html">Banana Tree</a></h1>
+
+<figure class="scrollImageComponent"><a href="banana.svg" target="_blank"><img src="banana.svg" width="247" height="256" loading="lazy"/></a></figure>
+
+<p class="scrollParagraphComponent">maxHeight 23ft</p>
+
+<p class="scrollParagraphComponent">https://en.wikipedia.org/wiki/Banana</p>
+
+
+
+
+
+
+
+
+
+<p class="scrollFileViewSourceUrlComponent"><a href="https://github.com/breck7/leafdb/blob/main/banana.scroll">View source</a></p></div>
+</div>
   <div class="scrollFooterComponent">
    <div class="scrollSocialMediaIconsComponent">
-    <a href="mailto:treebase@treenotation.org"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
-    <a href="https://twitter.com/treenotation"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
-    <a href="https://github.com/treenotation/treebase"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+    <a href="mailto:leafdb@publicdomaincompany.com"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Gmail icon</title><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg></a>
+    <a href="https://twitter.com/breckyunits"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Twitter icon</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg></a>
+    <a href="https://github.com/breck7/leafdb"><svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub icon</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
 </div>
-   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v22.1.0</a>
+   <a href="https://scroll.pub" class="scrollCommunityLinkComponent">Built with Scroll v35.1.0</a>
 </div>
 </body>
 </html>
