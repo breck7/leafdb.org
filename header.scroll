@@ -1,13 +1,14 @@
-measuringTapeCell
- description Measurements that you could make with measuring tape.
- regex [0-9]*\.?[0-9]*(ft|m)
- highlightScope constant.numeric
- examples 2ft 3.1m
+importOnly
+import settings.scroll
+scrollCssTag
+scrollHeader
+keyboardNav
+
 maxHeightNode
  description Max known height of the species
  extends abstractScrollNode
- crux maxHeight
- cells keywordCell measuringTapeCell
+ cruxFromId
+ cells keywordCell anyCell
  javascript
   compile() {
     return `<p style="display:block;">Max height: ${this.getWord(1)}</p>`

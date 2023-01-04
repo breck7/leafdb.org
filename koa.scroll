@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Koa Tree
 
 image koa.svg
@@ -6,5 +8,4 @@ maxHeight 98ft
 
 https://en.wikipedia.org/wiki/Acacia_koa
 
-groups index
-import settings.scroll
+scrollFooter

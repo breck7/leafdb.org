@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Hala Tree
 
 image hala.svg
@@ -6,5 +8,4 @@ maxHeight 46ft
 
 https://en.wikipedia.org/wiki/Pandanus_tectorius
 
-groups index
-import settings.scroll
+scrollFooter

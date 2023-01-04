@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title About LeafDB
 
 * This is a public domain database about trees. The goal of this site is to provide a big clean dataset for people to learn about trees.
@@ -11,4 +13,4 @@ title About LeafDB
 
 * This project will be a lot more fun with more people. If you are interested in trees (the livings things OR the data structures), drop me a note or just start sending pull requests/creating issues!
 
-import settings.scroll
+scrollFooter

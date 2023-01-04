@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Banana Tree
 
 image banana.svg
@@ -6,5 +8,4 @@ maxHeight 23ft
 
 https://en.wikipedia.org/wiki/Banana
 
-groups index
-import settings.scroll
+scrollFooter
