@@ -1,0 +1,4 @@
+import header.scroll
+title The Official Scroll Blog
+fullSnippets index
+import footer.scroll

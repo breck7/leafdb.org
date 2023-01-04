@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Jacaranda Tree
 
 image jacaranda.svg
@@ -6,5 +8,4 @@ maxHeight 66ft
 
 https://en.wikipedia.org/wiki/Jacaranda_mimosifolia
 
-groups index
-import settings.scroll
+scrollFooter

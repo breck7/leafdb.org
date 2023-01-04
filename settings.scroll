@@ -1,8 +1,6 @@
-siteTitle 🌳 LeafDB
-siteDescription A database about trees.
-github https://github.com/breck7/leafdb
-viewSourceBaseUrl https://github.com/breck7/leafdb/blob/main/
-twitter https://twitter.com/breckyunits
-email leafdb@publicdomaincompany.com
-baseUrl https://leafdb.org
 importOnly
+description A database about trees.
+git https://github.com/breck7/leafdb.org
+viewSourceBaseUrl https://github.com/breck7/leafdb.org/blob/main/
+email hi@leafdb.org
+baseUrl https://leafdb.org

@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Golden Shower Tree
 
 image golden-shower.svg
@@ -6,5 +8,4 @@ maxHeight 66ft
 
 https://en.wikipedia.org/wiki/Cassia_fistula
 
-groups index
-import settings.scroll
+scrollFooter

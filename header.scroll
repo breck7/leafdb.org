@@ -1,0 +1,25 @@
+importOnly
+import settings.scroll
+scrollCssTag
+scrollHeader
+keyboardNav
+
+maxHeightNode
+ description Max known height of the species
+ extends abstractScrollNode
+ cruxFromId
+ cells keywordCell anyCell
+ javascript
+  compile() {
+    return `<p style="display:block;">Max height: ${this.getWord(1)}</p>`
+  }
+ example
+  maxHeight 10ft
+wikipediaNode
+ description A link to the wikipedia page about a tree species.
+ extends abstractScrollNode
+ pattern ^https\:\/\/en\.wikipedia\.org\/wiki\/
+ javascript
+  compile() {
+    return `<p>Read more on <a href="${this.getLine()}">Wikipedia</a></p>`
+  }

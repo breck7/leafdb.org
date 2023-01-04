@@ -112,8 +112,5 @@ question What are people who study trees called?
 question How many species of animal live on one tree?
 
 
-import settings.scroll
-
-
-
+scrollFooter
 

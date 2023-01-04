@@ -1,3 +1,5 @@
+import header.scroll
+groups index
 title Coconut Tree
 
 image coconut.svg
@@ -6,5 +8,4 @@ maxHeight 100ft
 
 https://en.wikipedia.org/wiki/Coconut
 
-groups index
-import settings.scroll
+scrollFooter

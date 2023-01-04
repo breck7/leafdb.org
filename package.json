@@ -1,5 +1,13 @@
 {
+  "name": "leafdb.org",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/breck7/leafdb.org.git"
+  },
+  "author": "Breck Yunits",
+  "homepage": "https://leafdb.org",
   "dependencies": {
-    "scroll-cli": "^35.1.0"
+    "scroll-cli": "^50.0.0"
   }
 }
